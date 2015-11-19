@@ -1,0 +1,7 @@
+parameters:
+#    um2_blog.example.class: Um2\BlogBundle\Example
+
+services:
+#    um2_blog.example:
+#        class: %um2_blog.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

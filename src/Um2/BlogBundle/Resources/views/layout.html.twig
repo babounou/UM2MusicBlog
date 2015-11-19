@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  	{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/foundation.css') }}" type="text/css" />
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" />
+    {% endblock %}
+    <title>{% block title %}Um2 | MusicBlog{% endblock %}</title>
+  </head>
+
+  <body>
+
+    <section class="hero">
+      <div class="row intro">
+        <div class="small-centered medium-uncentered medium-6 large-7 columns">
+          <h1>UM2 Music Blog</h1>
+          <p>Ce projet est réalisé dans le cadre du Master AIGLE Informatique.</p>
+        </div>
+        <div class="small-centered medium-uncentered medium-6 large-5 columns">
+          <div class="tech-img"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="row" id="content">
+      <div class="large-12 columns">
+      	<div class="panel panel-yellow text-center">
+          <h3 class="subheader">Bienvenue sur notre blog Symfony ! </h3>
+          <p>Vous pouvez vous inscrire et vous connecter pour rajouter des articles, <br/>
+             ou bien simplement vous balader à travers le blog pour voir ceux qui existent déjà. <br/>
+             Pour ajouter un article avec une vidéo youtube aller dans Partager->Intégrer et copier/coller le lien. <br/>
+    	       Ci-dessous sont listées les principales technologies utilisées pour réaliser l'application :  </p>
+          <div class="row">
+          	<div class="large-4 medium-4 columns">
+        		    <p>
+                  <a href="http://foundation.zurb.com">@Foundation</a><br/>Framework css utilisé pour relooker le blog !
+                </p>
+      	    </div>
+          	<div class="large-4 medium-4 columns">
+          		<p>
+                <a href="http://symfony.com/">@Symfony</a><br /> PHP Web Development Framework.
+              </p>
+          	</div>
+          	<div class="large-4 medium-4 columns">
+          		<p>
+                <a href="https://www.youtube.com/channel/UC493juKsyNN7--0VzJ72U3Q">@EargasmicBeat</a><br />Vous trouverez ici pleins de super musiques à rajouter au blog !
+              </p>
+          	</div>
+    			</div>
+      	</div>
+      </div>
+    </div>
+
+  	<div class="row">
+      <div class="large-8 medium-8 columns">
+  			<div class="panel panel-blue">
+  			  {% block body %}
+  			  {% endblock %}
+  			</div>
+      </div>
+      <div id="menu" class="large-4 medium-4 columns">
+  	    <h3 class="text-center">Menu</h3>
+  	    <div class="panel panel-yellow">
+            <p>
+              <a href="{{ path('um2_blog_homepage') }}" class="menu-button small radius button">Accueil du blog</a>
+              <a href="{{ path('um2_blog_ajouter') }}" class="menu-button small radius button">Ajouter un article</a>
+            </p>
+        </div>
+      </div>
+  	</div>
+
+    <hr>
+
+    <div class="row" id="footer">
+  	  <div class="large-12 medium-12 columns">
+  		     <p>Ceci est un footer © 2014 Faculté des Sciences de Montpellier.</p>
+  	  </div>
+    </div>
+
+  </body>
+</html>

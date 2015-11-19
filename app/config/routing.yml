@@ -1,0 +1,7 @@
+um2_blog:
+    resource: "@Um2BlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

@@ -1,0 +1,30 @@
+{% extends "Um2BlogBundle::layout.html.twig" %}
+
+{% block title %}
+  Post - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h3>{{ article.titre }}</h3>
+  <i>Par {{ article.auteur }}, le {{ article.date|date('d/m/Y') }}</i> <br/> <br/>
+
+  <div class="well">
+    {{ article.contenu | raw }}
+  </div>
+
+
+  <br/> <br/>
+  <p>
+    <a href="{{ path('um2_blog_homepage') }}" class="small button radius">
+      Retour à la liste
+    </a>
+    <a href="{{ path('um2_blog_modifier', {'id': article.id}) }}" class="small success button radius">
+      Modifier l'article
+    </a>
+    <a href="{{ path('um2_blog_supprimer', {'id': article.id}) }}" class="small alert button radius" id="delete-btn">
+      Supprimer l'article
+    </a>
+  </p>
+
+{% endblock %}

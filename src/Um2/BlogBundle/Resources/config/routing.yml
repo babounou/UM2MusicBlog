@@ -1,0 +1,28 @@
+
+um2_blog_homepage:
+    path:      /blog/{page}
+    defaults:  { _controller: Um2BlogBundle:Blog:index, page: 1 }
+    requirements:
+        page:  \d*
+
+um2_blog_post:
+    path:      /blog/post/{id}
+    defaults:  { _controller: Um2BlogBundle:Blog:post }
+    requirements:
+        id:  \d+
+
+um2_blog_ajouter:
+    path:      /blog/ajouter
+    defaults:  { _controller: Um2BlogBundle:Blog:ajouter }
+
+um2_blog_modifier:
+    path:      /blog/modifier/{id}
+    defaults:  { _controller: Um2BlogBundle:Blog:modifier }
+    requirements:
+        id:  \d+
+
+um2_blog_supprimer:
+    path:      /blog/supprimer/{id}
+    defaults:  { _controller: Um2BlogBundle:Blog:supprimer }
+    requirements:
+        id:  \d+

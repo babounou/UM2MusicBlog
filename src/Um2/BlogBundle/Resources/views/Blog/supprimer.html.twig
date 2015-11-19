@@ -1,0 +1,27 @@
+{% extends "Um2BlogBundle::layout.html.twig" %}
+
+{% block title %}
+  Delete - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2>{{ article.titre }}</h2>
+  <i>Par {{ article.auteur }}, le {{ article.date|date('d/m/Y') }}</i> <br/> <br/>
+
+  <div class="well">
+    <p>
+    Etes-vous certain de vouloir supprimer l'article "{{ article.titre }}" ?
+  </p>
+
+  <form action="{{ path('um2_blog_supprimer', {'id': article.id}) }}" method="post">
+    <a href="{{ path('um2_blog_post', {'id': article.id}) }}" class="small button">
+      Retour à l'article
+    </a>
+
+    <input type="submit" value="Supprimer" class="small alert button" />
+    {{ form_rest(form) }}
+  </form>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "Um2BlogBundle::layout.html.twig" %}
+
+{% block title %}
+  Add - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  <h2>Ajouter article</h2> <br/> <br/>
+
+  <div class="well">
+        <form method="post" {{ form_enctype(form) }}>
+			{{ form_widget(form) }}
+			<input type="submit" class="small success button radius" value="Valider" />
+		</form>
+  </div>
+
+{% endblock %}
