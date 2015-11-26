@@ -25,7 +25,7 @@ h1, #header, #footer {
 .hero {
   background: url("http://wallpoper.com/images/00/34/39/15/circuit-pcb_00343915.jpg") no-repeat center center;
   background-size: cover;
-  height: 80vh;
+  height: 40vh;
   box-shadow: 1px 1px 12px #555;
 }
 .hero:before {
@@ -33,7 +33,7 @@ h1, #header, #footer {
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 155px;
+  height: 40vh;
   left: 0;
   background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
   opacity: .8;

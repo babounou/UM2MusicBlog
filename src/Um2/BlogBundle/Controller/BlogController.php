@@ -18,17 +18,17 @@ class BlogController extends Controller
                      ->getManager()
                      ->getRepository('Um2BlogBundle:Article')
                      ->findBy( array(), array('date' => 'desc'), 10, 0);
-  
+
 	return $this->render('Um2BlogBundle:Blog:index.html.twig', array(
     'articles' => $articles));
   }
-  
+
   // POST //
   public function postAction($id)
-  {    
+  {
     $em = $this->getDoctrine()
                ->getManager();
-    
+
     // Pour récupérer un article unique : on utilise find()
     $article = $em->getRepository('Um2BlogBundle:Article')
                   ->find($id);
@@ -36,12 +36,12 @@ class BlogController extends Controller
     if ($article === null) {
       throw $this->createNotFoundException('Article[id='.$id.'] inexistant.');
     }
-    
+
   return $this->render('Um2BlogBundle:Blog:post.html.twig', array(
     'article' => $article
   ));
   }
-  
+
   // AJOUTER //
   public function ajouterAction()
   {
@@ -50,10 +50,10 @@ class BlogController extends Controller
 
     $form = $this->createFormBuilder($article)
                  ->add('titre',       'text')
-				 ->add('auteur',      'text')
+				         ->add('auteur',      'text')
                  ->add('contenu',     'textarea')
                  ->getForm();
-				 
+
     $request = $this->get('request');
 
     if ($request->getMethod() == 'POST') {
@@ -63,7 +63,7 @@ class BlogController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->persist($article);
         $em->flush();
-		
+
         return $this->redirect($this->generateUrl('um2_blog_post', array('id' => $article->getId())));
       }
     }
@@ -72,7 +72,7 @@ class BlogController extends Controller
       'form' => $form->createView(),
     ));
   }
-  
+
 	// MODIFIER //
     public function modifierAction($id)
   {
@@ -85,13 +85,13 @@ class BlogController extends Controller
     if ($article == null) {
       throw $this->createNotFoundException('Article[id='.$id.'] inexistant');
     }
-	
+
 	$form = $this->createFormBuilder($article)
                  ->add('titre',       'text')
-				 ->add('auteur',      'text')
+				         ->add('auteur',      'text')
                  ->add('contenu',     'textarea')
                  ->getForm();
-				 
+
     $request = $this->get('request');
 
     if ($request->getMethod() == 'POST') {
@@ -101,25 +101,25 @@ class BlogController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->persist($article);
         $em->flush();
-		
+
         return $this->redirect($this->generateUrl('um2_blog_post', array('id' => $article->getId())));
       }
     }
-	
+
     return $this->render('Um2BlogBundle:Blog:modifier.html.twig', array(
       'form' => $form->createView(),
     ));
   }
-  
+
 	// SUPPRIMER //
     public function supprimerAction($id)
   {
     $em = $this->getDoctrine()
                ->getManager();
-			   
+
     $article = $em->getRepository('Um2BlogBundle:Article')
                   ->find($id);
-    
+
     // Si l'article n'existe pas, on affiche une erreur 404
     if ($article == null) {
       throw $this->createNotFoundException('Article[id='.$id.'] inexistant');
@@ -144,8 +144,8 @@ class BlogController extends Controller
       'article' => $article,
       'form'    => $form->createView()
     ));
-    
+
   }
-  
-  
+
+
 }
