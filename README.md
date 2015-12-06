@@ -17,6 +17,7 @@ Les membres du projet sont :
 
 ### Installation
 Une fois Symfony installé sur son PC suivre la démarche suivante :
+
 1. Importer le projet
 2. Se rendre dans le dossier `www/wamp/Symfony` lancer une console et taper les commandes suivantes
 3. `composer install`
@@ -37,3 +38,9 @@ Les musiques sont présentées sous formes de vidéos youtube intégrées au blo
 Pour ajouter une vidéo il suffit de copier/coller le lien d'intégration fourni par youtube dans le textarea "contenu" de la page 'ajouter'. L'utilisateur peut également écrire du texte s'il le désire.
 
 En mode développement des articles de test sont chargés automatiquement grâce au bundle doctrine fixtures par le biais de la commande `load` lancée lors de l'installation.
+
+Pour accéder aux fonctionnalités d'ajout, de modification et de suppression il faut se connecter. L'utilisateur par défaut est le suivant :
+- Login : admin
+- Mot de passe : admin
+
+Ces champs sont déjà pré-remplis dans un soucis d'efficacité de démonstration.
