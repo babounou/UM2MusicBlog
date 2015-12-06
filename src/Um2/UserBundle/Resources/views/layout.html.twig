@@ -56,8 +56,8 @@
   	<div class="row">
       <div class="large-8 medium-8 columns">
   			<div class="panel panel-blue">
-  			  {% block body %}
-  			  {% endblock %}
+        {% block fos_user_content %}
+        {% endblock fos_user_content %}
   			</div>
       </div>
       <div id="menu" class="large-4 medium-4 columns">
@@ -65,12 +65,6 @@
   	    <div class="panel panel-yellow">
             <p>
               <a href="{{ path('um2_blog_homepage') }}" class="menu-button small radius button">Accueil du blog</a>
-              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                <a href="{{ path('um2_blog_ajouter') }}" class="menu-button small radius button">Ajouter un article</a>
-                <a href="{{ path('fos_user_security_logout') }}" class="menu-button small radius button">Déconnexion</a>
-              {% else %}
-                <a href="{{ path('fos_user_security_login') }}" class="menu-button small radius button">Se connecter</a>
-              {% endif %}
             </p>
         </div>
       </div>
